@@ -3,10 +3,5 @@ inhibit_all_warnings!
 use_frameworks!
 
 target ‘demo’ do
-    
     pod 'AlluniteSdk', :git => 'https://github.com/YuraKr/io-sdk.git', :tag => '1.2.10'
-    pod 'FacebookCore'
-    pod 'FacebookLogin'
-    pod 'FacebookShare'
-    #pod 'Alamofire', '~> 4.4'
 end

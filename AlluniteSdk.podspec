@@ -15,6 +15,7 @@ iBeacon technology.
   s.source_files = ['Headers/*.h']
   s.vendored_libraries = 'libAllUniteSdk.a','libBlueCatsSDK.a'
   s.requires_arc = true
+  s.xcconfig  =  { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/BlueCatsSDK/"', 'OTHER_LDFLAGS' => '$(inherited) "-ObjC"'}
 
   s.frameworks = 'SystemConfiguration', 'CoreBluetooth', 'MobileCoreServices', 'CoreGraphics', 'CoreLocation', 'AdSupport', 'CoreData'
 #s.dependency 'BlueCatsSDK', '~> 2.0.2', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git'

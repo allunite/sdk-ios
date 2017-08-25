@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FacebookLogin
 import AdSupport
 
 import CoreLocation

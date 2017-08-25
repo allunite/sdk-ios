@@ -49,7 +49,7 @@
 		001B45181F5061F200F29ED6 /* YouSeeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeLoginViewController.swift; sourceTree = "<group>"; };
 		001B45191F5061F200F29ED6 /* YouSeeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeNavigationController.swift; sourceTree = "<group>"; };
 		001B451A1F5061F200F29ED6 /* YouSeeTermsAndCondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeTermsAndCondViewController.swift; sourceTree = "<group>"; };
-		001B451B1F5061F200F29ED6 /* playground-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "playground-Bridging-Header.h"; sourceTree = "<group>"; };
+		001B451B1F5061F200F29ED6 /* demo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		001B451C1F5061F200F29ED6 /* PlaygroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundController.swift; sourceTree = "<group>"; };
 		001B452A1F5066E300F29ED6 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Facebook.swift; path = Facebook/Facebook.swift; sourceTree = "<group>"; };
 		001B452C1F5066F200F29ED6 /* YouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouViewController.swift; path = Demo/YouViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				001B45121F5061F200F29ED6 /* LFTEticaBk.ttf */,
 				001B45131F5061F200F29ED6 /* LFTEticaLt.ttf */,
 				001B45141F5061F200F29ED6 /* moduleYouSee */,
-				001B451B1F5061F200F29ED6 /* playground-Bridging-Header.h */,
+				001B451B1F5061F200F29ED6 /* demo-Bridging-Header.h */,
 				001B451C1F5061F200F29ED6 /* PlaygroundController.swift */,
 				001B44FC1F50615600F29ED6 /* AppDelegate.swift */,
 				001B45001F50615600F29ED6 /* Main.storyboard */,

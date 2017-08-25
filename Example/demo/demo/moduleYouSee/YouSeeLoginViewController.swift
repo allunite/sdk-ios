@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlluniteSdk
 
 class YouSeeLoginViewController: UIViewController, UITextFieldDelegate {
 
