@@ -88,54 +88,62 @@ class PlaygroundController: UIViewController {
     
     @IBAction func bindFacebookProfile(_ sender: Any) {
         
-        guard let token = Facebook.token() else {
-            self.showMessage(message: "Need login to facebook")
-            return
-        }
+//        guard let token = Facebook.token() else {
+//            self.showMessage(message: "Need login to facebook")
+//            return
+//        }
+//        
+//        Facebook.getProfileData(profileToken: token) { error, result in
+//            if let _ = error {
+//                self.showMessage(message: "Facebook request failed.")
+//                return
+//            }
+//            
+//            let profileJsonData = PlaygroundController.toJsonString(map: result) ?? "{}"
+//            
+//            self.alluniteSdk.bindFacebook(token, profileJson: profileJsonData) { (error) in
+//                if let error = error {
+//                    print("\(PlaygroundController.TAG). Bind facebook failed. Reason: \(error.localizedDescription)")
+//                    return
+//                }
+//                print("\(PlaygroundController.TAG). Bind facebook completed")
+//            }
+//        }
         
-        Facebook.getProfileData(profileToken: token) { error, result in
-            if let _ = error {
-                self.showMessage(message: "Facebook request failed.")
+        self.alluniteSdk.bindFacebook("facebook_token", profileJson: "profile json data") { (error) in
+            if let error = error {
+                print("\(PlaygroundController.TAG). Bind facebook failed. Reason: \(error.localizedDescription)")
                 return
             }
-            
-            let profileJsonData = PlaygroundController.toJsonString(map: result) ?? "{}"
-            
-            self.alluniteSdk.bindFacebook(token, profileJson: profileJsonData) { (error) in
-                if let error = error {
-                    print("\(PlaygroundController.TAG). Bind facebook failed. Reason: \(error.localizedDescription)")
-                    return
-                }
-                print("\(PlaygroundController.TAG). Bind facebook completed")
-            }
+            print("\(PlaygroundController.TAG). Bind facebook completed")
         }
     }
     
     @IBAction func unbindDevice(_ sender: Any) {
-        let deviceId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        
-        let shaData = sha256(string: deviceId)
-        let shaDeviceId = shaData!.map { String(format: "%02hhx", $0) }.joined()
-        
-        let url = URL(string:"https://sdk-api.allunite.com/bind/machash/\(shaDeviceId)")!;
-        Alamofire.request(url, method: HTTPMethod.delete).response { (responce) in
-            
-            if let error = responce.error {
-                self.showMessage(message: "Unbind device failed. Reason: \(error.localizedDescription)")
-                return
-            }
-            
-            self.alluniteSdk.reinitilize({ (error) in
-                if let _ = error {
-                    self.showMessage(message: "Unbind succes but init Sdk request failed")
-                    return
-                }
-                
-                if !self.alluniteSdk.isDeviceBounded() {
-                    self.showMessage(message: "Device matching is revoked")
-                }
-            })
-        }
+//        let deviceId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+//        
+//        let shaData = sha256(string: deviceId)
+//        let shaDeviceId = shaData!.map { String(format: "%02hhx", $0) }.joined()
+//        
+//        let url = URL(string:"https://sdk-api.allunite.com/bind/machash/\(shaDeviceId)")!;
+//        Alamofire.request(url, method: HTTPMethod.delete).response { (responce) in
+//            
+//            if let error = responce.error {
+//                self.showMessage(message: "Unbind device failed. Reason: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            self.alluniteSdk.reinitilize({ (error) in
+//                if let _ = error {
+//                    self.showMessage(message: "Unbind succes but init Sdk request failed")
+//                    return
+//                }
+//                
+//                if !self.alluniteSdk.isDeviceBounded() {
+//                    self.showMessage(message: "Device matching is revoked")
+//                }
+//            })
+//        }
         
     }
     
@@ -218,9 +226,9 @@ extension PlaygroundController {
     }
     
     fileprivate func initilizeFacebookButton(){
-        let button = Facebook.newLoginButton();
-        button.frame = CGRect(x: 0, y: 0, width: facebookLoginButton.frame.size.width, height: facebookLoginButton.frame.size.height)
-        facebookLoginButton.addSubview(button)
+//        let button = Facebook.newLoginButton();
+//        button.frame = CGRect(x: 0, y: 0, width: facebookLoginButton.frame.size.width, height: facebookLoginButton.frame.size.height)
+//        facebookLoginButton.addSubview(button)
     }
 }
 

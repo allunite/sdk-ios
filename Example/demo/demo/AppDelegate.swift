@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let _ = Facebook.application(application, didFinishLaunchingWithOptions: launchOptions)
+        //let _ = Facebook.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         alluniteSdk.initializeAllUniteSdk(withAccountId: config.getAccountId(), accountKey: config.getAccountKey(), launchOptions: launchOptions)
         return true
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
-        Facebook.applicationDidBecomeActive()
+       // Facebook.applicationDidBecomeActive()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -57,7 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         
-        return Facebook.application(app, open: url, options: options)
+        //return Facebook.application(app, open: url, options: options)
+        return false
     }
 
 }
