@@ -17,9 +17,9 @@ iBeacon technology.
   s.ios.deployment_target = '8.0'
 
   s.source_files = ['Headers/*.h']
-  s.vendored_libraries = 'libBlueCatsSDK.a'
+  s.vendored_libraries = 'libAllUniteSdk.a'
   s.requires_arc = true
-  s.source   = { :git => 'https://github.com/YuraKr/io-sdk.git', :tag => '1.2.10'  }
+  s.source   = { :git => 'https://github.com/YuraKr/io-sdk.git', :tag => s.version  }
   s.frameworks = 'CoreBluetooth', 'CoreLocation'
-#s.dependency 'BlueCatsSDK', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git', :tag => '2.0.2'
+  s.dependency 'BlueCatsSDK', '~> 2.0.2', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git'
 end
