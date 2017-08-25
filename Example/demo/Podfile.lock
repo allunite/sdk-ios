@@ -1,4 +1,5 @@
 PODS:
+  - AlluniteSdk (1.2.10)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -26,11 +27,23 @@ PODS:
     - FBSDKCoreKit
 
 DEPENDENCIES:
+  - AlluniteSdk (from `https://github.com/YuraKr/io-sdk.git`, tag `1.2.10`)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
 
+EXTERNAL SOURCES:
+  AlluniteSdk:
+    :git: https://github.com/YuraKr/io-sdk.git
+    :tag: 1.2.10
+
+CHECKOUT OPTIONS:
+  AlluniteSdk:
+    :git: https://github.com/YuraKr/io-sdk.git
+    :tag: 1.2.10
+
 SPEC CHECKSUMS:
+  AlluniteSdk: a76c2c0842f851847502f8cc00d3cd559ef67e10
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -39,6 +52,6 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
   FBSDKShareKit: 21ab3c8d173f4fa20c47c1061f3a9fac5950b5fa
 
-PODFILE CHECKSUM: 3ab1555f2879be6af9277464377f4be145bd7de3
+PODFILE CHECKSUM: 01debf97bee4fba4af31c4cbbf7c42dd79627bda
 
 COCOAPODS: 1.3.1

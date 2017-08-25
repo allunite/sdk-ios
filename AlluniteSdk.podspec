@@ -13,7 +13,7 @@ iBeacon technology.
   s.ios.deployment_target = '8.0'
   s.public_header_files = 'Headers/*.h'
   s.source_files = ['Headers/*.h']
-  s.vendored_libraries = 'libAllUniteSdk.a,libBlueCatsSDK.a'
+  s.vendored_libraries = 'libAllUniteSdk.a','libBlueCatsSDK.a'
   s.requires_arc = true
 
   s.frameworks = 'SystemConfiguration', 'CoreBluetooth', 'MobileCoreServices', 'CoreGraphics', 'CoreLocation', 'AdSupport', 'CoreData'
