@@ -10,16 +10,18 @@ permission. AllUnite measure the anonymous consumer in the local store using All
 iBeacon technology.
                        DESC
 
+  s.ios.deployment_target = '8.0'
+  s.public_header_files = 'Headers/*.h'
+  s.source_files = ['Headers/*.h']
+  s.vendored_libraries = 'libAllUniteSdk.a,libBlueCatsSDK.a'
+  s.requires_arc = true
+
+  s.frameworks = 'SystemConfiguration', 'CoreBluetooth', 'MobileCoreServices', 'CoreGraphics', 'CoreLocation', 'AdSupport', 'CoreData'
+#s.dependency 'BlueCatsSDK', '~> 2.0.2', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git'
+
+
   s.homepage         = 'https://github.com/allunite/io-sdk/wiki'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'git' => 'yury.krohmal@ardas.dp.ua' }
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = ['Headers/*.h']
-  s.vendored_libraries = 'libAllUniteSdk.a'
-  s.requires_arc = true
-  s.source   = { :git => 'https://github.com/YuraKr/io-sdk.git', :tag => s.version  }
-  s.frameworks = 'CoreBluetooth', 'CoreLocation'
-  s.dependency 'BlueCatsSDK', '~> 2.0.2', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git'
+  s.source   = { :git => 'https://github.com/YuraKr/io-sdk.git', :tag => s.version.to_s  }
 end
