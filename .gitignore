@@ -1,1 +1,4 @@
 Example/demo/Pods
+contents.xcworkspacedata
+Podfile.lock
+Example/demo/demo.xcworkspace/xcuserdata

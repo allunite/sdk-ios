@@ -1,10 +1,3 @@
-//
-//  YouViewController.swift
-//  AllUniteSdk
-//
-//  Created by Yury on 03.08.17.
-//  Copyright © 2017 AllUnite. All rights reserved.
-//
 
 import UIKit
 
@@ -21,7 +14,6 @@ class YouViewController: UIViewController {
     
     func detectStateSdk(){
         let enabled:Bool = alluniteSdk.isSdkEnabled()
-        print("SdkDisabled \(enabled)");
         if(enabled){
             print("All api functions are available")
         } else {
@@ -99,7 +91,7 @@ class YouViewController: UIViewController {
             print("success")
         }
     }
-    
+
     
     func getFacebookToken() -> String {
         return "facebook user token"
@@ -108,5 +100,6 @@ class YouViewController: UIViewController {
     func getFacebookProfileJson() -> String {
         return "facebook profile json for user token"
     }
-
+    
 }
+

@@ -11,22 +11,7 @@
 		001B45021F50615600F29ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001B45001F50615600F29ED6 /* Main.storyboard */; };
 		001B45041F50615600F29ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001B45031F50615600F29ED6 /* Assets.xcassets */; };
 		001B45071F50615600F29ED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001B45051F50615600F29ED6 /* LaunchScreen.storyboard */; };
-		001B451D1F5061F200F29ED6 /* AllUniteSdkLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B450E1F5061F200F29ED6 /* AllUniteSdkLocationManager.swift */; };
-		001B451E1F5061F200F29ED6 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B450F1F5061F200F29ED6 /* Config.swift */; };
-		001B451F1F5061F200F29ED6 /* LFTEtica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 001B45101F5061F200F29ED6 /* LFTEtica-Bold.ttf */; };
-		001B45201F5061F200F29ED6 /* LFTEtica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 001B45111F5061F200F29ED6 /* LFTEtica.ttf */; };
-		001B45211F5061F200F29ED6 /* LFTEticaBk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 001B45121F5061F200F29ED6 /* LFTEticaBk.ttf */; };
-		001B45221F5061F200F29ED6 /* LFTEticaLt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 001B45131F5061F200F29ED6 /* LFTEticaLt.ttf */; };
-		001B45231F5061F200F29ED6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001B45151F5061F200F29ED6 /* Media.xcassets */; };
-		001B45241F5061F200F29ED6 /* yousee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001B45161F5061F200F29ED6 /* yousee.storyboard */; };
-		001B45251F5061F200F29ED6 /* YouSeeAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B45171F5061F200F29ED6 /* YouSeeAppViewController.swift */; };
-		001B45261F5061F200F29ED6 /* YouSeeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B45181F5061F200F29ED6 /* YouSeeLoginViewController.swift */; };
-		001B45271F5061F200F29ED6 /* YouSeeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B45191F5061F200F29ED6 /* YouSeeNavigationController.swift */; };
-		001B45281F5061F200F29ED6 /* YouSeeTermsAndCondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B451A1F5061F200F29ED6 /* YouSeeTermsAndCondViewController.swift */; };
-		001B45291F5061F200F29ED6 /* PlaygroundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B451C1F5061F200F29ED6 /* PlaygroundController.swift */; };
-		001B452B1F5066E300F29ED6 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B452A1F5066E300F29ED6 /* Facebook.swift */; };
-		001B452E1F5066F200F29ED6 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B452C1F5066F200F29ED6 /* YouViewController.swift */; };
-		001B452F1F5066F200F29ED6 /* YouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001B452D1F5066F200F29ED6 /* YouViewController.xib */; };
+		001B45291F5061F200F29ED6 /* YouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B451C1F5061F200F29ED6 /* YouViewController.swift */; };
 		8856EFE5A9D0F9F50DAD131D /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFDA6BC8CCBBFC0343FB873 /* Pods_demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,23 +22,8 @@
 		001B45031F50615600F29ED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001B45061F50615600F29ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001B45081F50615600F29ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		001B450E1F5061F200F29ED6 /* AllUniteSdkLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUniteSdkLocationManager.swift; sourceTree = "<group>"; };
-		001B450F1F5061F200F29ED6 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		001B45101F5061F200F29ED6 /* LFTEtica-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LFTEtica-Bold.ttf"; sourceTree = "<group>"; };
-		001B45111F5061F200F29ED6 /* LFTEtica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LFTEtica.ttf; sourceTree = "<group>"; };
-		001B45121F5061F200F29ED6 /* LFTEticaBk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LFTEticaBk.ttf; sourceTree = "<group>"; };
-		001B45131F5061F200F29ED6 /* LFTEticaLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LFTEticaLt.ttf; sourceTree = "<group>"; };
-		001B45151F5061F200F29ED6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		001B45161F5061F200F29ED6 /* yousee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = yousee.storyboard; sourceTree = "<group>"; };
-		001B45171F5061F200F29ED6 /* YouSeeAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeAppViewController.swift; sourceTree = "<group>"; };
-		001B45181F5061F200F29ED6 /* YouSeeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeLoginViewController.swift; sourceTree = "<group>"; };
-		001B45191F5061F200F29ED6 /* YouSeeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeNavigationController.swift; sourceTree = "<group>"; };
-		001B451A1F5061F200F29ED6 /* YouSeeTermsAndCondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouSeeTermsAndCondViewController.swift; sourceTree = "<group>"; };
 		001B451B1F5061F200F29ED6 /* demo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
-		001B451C1F5061F200F29ED6 /* PlaygroundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundController.swift; sourceTree = "<group>"; };
-		001B452A1F5066E300F29ED6 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Facebook.swift; path = Facebook/Facebook.swift; sourceTree = "<group>"; };
-		001B452C1F5066F200F29ED6 /* YouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouViewController.swift; path = Demo/YouViewController.swift; sourceTree = "<group>"; };
-		001B452D1F5066F200F29ED6 /* YouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YouViewController.xib; path = Demo/YouViewController.xib; sourceTree = "<group>"; };
+		001B451C1F5061F200F29ED6 /* YouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouViewController.swift; sourceTree = "<group>"; };
 		14EA7D888B0AD31DE82D4660 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 		2BFDA6BC8CCBBFC0343FB873 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1DF3441CE52ED1186C702C /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,38 +62,15 @@
 		001B44FB1F50615600F29ED6 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				001B452C1F5066F200F29ED6 /* YouViewController.swift */,
-				001B452D1F5066F200F29ED6 /* YouViewController.xib */,
-				001B452A1F5066E300F29ED6 /* Facebook.swift */,
-				001B450E1F5061F200F29ED6 /* AllUniteSdkLocationManager.swift */,
-				001B450F1F5061F200F29ED6 /* Config.swift */,
-				001B45101F5061F200F29ED6 /* LFTEtica-Bold.ttf */,
-				001B45111F5061F200F29ED6 /* LFTEtica.ttf */,
-				001B45121F5061F200F29ED6 /* LFTEticaBk.ttf */,
-				001B45131F5061F200F29ED6 /* LFTEticaLt.ttf */,
-				001B45141F5061F200F29ED6 /* moduleYouSee */,
 				001B451B1F5061F200F29ED6 /* demo-Bridging-Header.h */,
-				001B451C1F5061F200F29ED6 /* PlaygroundController.swift */,
+				001B451C1F5061F200F29ED6 /* YouViewController.swift */,
 				001B44FC1F50615600F29ED6 /* AppDelegate.swift */,
 				001B45001F50615600F29ED6 /* Main.storyboard */,
-				001B45031F50615600F29ED6 /* Assets.xcassets */,
 				001B45051F50615600F29ED6 /* LaunchScreen.storyboard */,
+				001B45031F50615600F29ED6 /* Assets.xcassets */,
 				001B45081F50615600F29ED6 /* Info.plist */,
 			);
 			path = demo;
-			sourceTree = "<group>";
-		};
-		001B45141F5061F200F29ED6 /* moduleYouSee */ = {
-			isa = PBXGroup;
-			children = (
-				001B45151F5061F200F29ED6 /* Media.xcassets */,
-				001B45161F5061F200F29ED6 /* yousee.storyboard */,
-				001B45171F5061F200F29ED6 /* YouSeeAppViewController.swift */,
-				001B45181F5061F200F29ED6 /* YouSeeLoginViewController.swift */,
-				001B45191F5061F200F29ED6 /* YouSeeNavigationController.swift */,
-				001B451A1F5061F200F29ED6 /* YouSeeTermsAndCondViewController.swift */,
-			);
-			path = moduleYouSee;
 			sourceTree = "<group>";
 		};
 		2252167E36B60E424C794EB4 /* Pods */ = {
@@ -178,7 +125,6 @@
 				TargetAttributes = {
 					001B44F81F50615600F29ED6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Z33XTX3YMY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -208,14 +154,7 @@
 			files = (
 				001B45071F50615600F29ED6 /* LaunchScreen.storyboard in Resources */,
 				001B45041F50615600F29ED6 /* Assets.xcassets in Resources */,
-				001B45231F5061F200F29ED6 /* Media.xcassets in Resources */,
 				001B45021F50615600F29ED6 /* Main.storyboard in Resources */,
-				001B45221F5061F200F29ED6 /* LFTEticaLt.ttf in Resources */,
-				001B45211F5061F200F29ED6 /* LFTEticaBk.ttf in Resources */,
-				001B452F1F5066F200F29ED6 /* YouViewController.xib in Resources */,
-				001B45241F5061F200F29ED6 /* yousee.storyboard in Resources */,
-				001B451F1F5061F200F29ED6 /* LFTEtica-Bold.ttf in Resources */,
-				001B45201F5061F200F29ED6 /* LFTEtica.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,16 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001B451D1F5061F200F29ED6 /* AllUniteSdkLocationManager.swift in Sources */,
-				001B45261F5061F200F29ED6 /* YouSeeLoginViewController.swift in Sources */,
-				001B45281F5061F200F29ED6 /* YouSeeTermsAndCondViewController.swift in Sources */,
-				001B45271F5061F200F29ED6 /* YouSeeNavigationController.swift in Sources */,
-				001B452E1F5066F200F29ED6 /* YouViewController.swift in Sources */,
-				001B452B1F5066E300F29ED6 /* Facebook.swift in Sources */,
 				001B44FD1F50615600F29ED6 /* AppDelegate.swift in Sources */,
-				001B45251F5061F200F29ED6 /* YouSeeAppViewController.swift in Sources */,
-				001B45291F5061F200F29ED6 /* PlaygroundController.swift in Sources */,
-				001B451E1F5061F200F29ED6 /* Config.swift in Sources */,
+				001B45291F5061F200F29ED6 /* YouViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -412,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -425,7 +356,7 @@
 			baseConfigurationReference = FF1DF3441CE52ED1186C702C /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z33XTX3YMY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allunite.sdk.demo;
@@ -440,7 +371,7 @@
 			baseConfigurationReference = 14EA7D888B0AD31DE82D4660 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Z33XTX3YMY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allunite.sdk.demo;
