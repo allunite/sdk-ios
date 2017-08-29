@@ -9,8 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let accountId = "Ardas test" //"YOUR_ACCOUNT_ID"
-        let accountKey = "287708C2BE7048A3B4D8518D84E642B3" //"YOUR_ACCOUNT_KEY"
+        let accountId = "PodTest" //"YOUR_ACCOUNT_ID"
+        let accountKey = "E539308C3D164BA286CB0398D03F16B2" //"YOUR_ACCOUNT_KEY"
         
         alluniteSdk.initializeAllUniteSdk(withAccountId: accountId, accountKey: accountKey, launchOptions: launchOptions)
         return true

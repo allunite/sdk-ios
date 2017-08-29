@@ -23,7 +23,7 @@
 			<string>AllUniteSdk</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>allunite-sdk-demo</string>
+				<string>all-unite-demo-pod</string>
 			</array>
 		</dict>
 		<dict>
