@@ -21,6 +21,8 @@ If you need to update the installed AlluniteSdk dependency in your project:
 $ pod update
 ```
 
+To import AllUniteSdk into a Swift project, add `#import "AllUniteSdkManager.h"` into your bridging header.
+
 #### 2. Add to info.plist:
 
 Custom Url scheme:
