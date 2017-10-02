@@ -24,6 +24,7 @@ typedef void (^allunitesdk_update_authorization_status_block)(CLAuthorizationSta
 -(void) setSdkEnabled: (BOOL) isEnabled;
 
 -(BOOL) isLocationAvailable;
+-(void) requestAutorizationStatus;
 -(void) requestAutorizationStatus: (allunitesdk_update_authorization_status_block _Nonnull) changeHandler;
 
 -(BOOL) openUrl:(NSURL * _Nullable)url
