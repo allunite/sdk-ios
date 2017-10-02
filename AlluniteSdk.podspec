@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AlluniteSdk'
-  s.version          = '1.2.10'
+  s.version          = '1.2.11'
 s.summary          = 'AllUnite SDK designed to track consumers in the physical world.'
 
   s.description      = <<-DESC
@@ -17,11 +17,11 @@ iBeacon technology.
   s.requires_arc = true
 
   s.frameworks = 'SystemConfiguration', 'CoreBluetooth', 'MobileCoreServices', 'CoreGraphics', 'CoreLocation', 'AdSupport', 'CoreData'
-#s.dependency 'BlueCatsSDK', '~> 2.0.2', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git'
+#s.dependency 'BlueCatsSDK', '~> 2.0.3', :git => 'https://github.com/bluecats/bluecats-ios-sdk.git'
 
 
   s.homepage         = 'https://github.com/allunite/io-sdk/wiki'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'git' => 'yury.krohmal@ardas.dp.ua' }
-  s.source   = { :git => 'https://github.com/YuraKr/io-sdk.git', :tag => s.version.to_s  }
+  s.source   = { :git => 'https://github.com/allunite/io-sdk.git', :tag => s.version.to_s  }
 end
