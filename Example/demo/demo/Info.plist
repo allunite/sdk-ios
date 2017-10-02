@@ -56,6 +56,10 @@
 	</dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Application tracks your position to search nearby shops becon</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Application tracks your position to search nearby shops</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Application tracks your position to search nearby shops</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Application tracks your position to search nearby shops</string>
 	<key>NSLocationUsageDescription</key>
