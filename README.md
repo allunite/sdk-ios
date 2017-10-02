@@ -7,7 +7,7 @@ We recommend installing AlluniteSdk with CocoaPods. CocoaPods is an Objective-C 
 
 Add a dependency to your Podfile in your Xcode project directory:
 ```ruby
-pod 'AlluniteSdk', :git => 'https://github.com/allunite/io-sdk.git', :tag => '1.2.10'
+pod 'AlluniteSdk', :git => 'https://github.com/allunite/io-sdk.git', :tag => '1.2.11'
 ```
 
 Now you can install the AlluniteSdk dependency in your project:
@@ -70,6 +70,10 @@ For location and beacon tracking add this to info.plist :
 	<string>Description to user - location always usage</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Description to user - location when in use</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    	<string>Application tracks your position to search nearby shops</string>
+    	<key>NSLocationWhenInUseUsageDescription</key>
+    	<string>Application tracks your position to search nearby shops</string>
 ...
 </dict>
 </plist>
@@ -136,9 +140,23 @@ class YouViewController: UIViewController {
     func bindAndTrackDevice() {
         
         alluniteSdk.requestAutorizationStatus { (status: CLAuthorizationStatus) in
-            if status != CLAuthorizationStatus.authorizedWhenInUse
+            
+            if status == CLAuthorizationStatus.notDetermined {
+                self.alluniteSdk.requestAutorizationStatus()
+                return
+            }
+            
+            if     status != CLAuthorizationStatus.authorizedWhenInUse
                 && status != CLAuthorizationStatus.authorizedAlways {
-                print("App don't have permission using CoreLocation")
+                
+                if status == CLAuthorizationStatus.denied {
+                    let alert = UIAlertController(title: "Alert", message: "User has explicitly denied authorization for this application, or location services are disabled in Settings.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                
+                print("App don't have permission using Location Service")
                 return
             }
             
