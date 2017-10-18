@@ -4,6 +4,8 @@
 #import "AllUniteSdkBeaconInfo.h"
 #import <CoreLocation/CoreLocation.h>
 
+
+typedef void (^allunitesdk_fetch_completion_block)();
 typedef void (^allunitesdk_completion_block)(NSError* _Nullable);
 
 typedef void (^allunitesdk_update_authorization_status_block)(CLAuthorizationStatus status);
@@ -26,6 +28,8 @@ typedef void (^allunitesdk_update_authorization_status_block)(CLAuthorizationSta
 -(BOOL) isLocationAvailable;
 -(void) requestAutorizationStatus;
 -(void) requestAutorizationStatus: (allunitesdk_update_authorization_status_block _Nonnull) changeHandler;
+
+-(void) backgroundFetch: (allunitesdk_fetch_completion_block _Nonnull) fetchCompleted;
 
 -(BOOL) openUrl:(NSURL * _Nullable)url
         options:(NSDictionary * _Nullable)options;

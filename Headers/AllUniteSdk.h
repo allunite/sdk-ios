@@ -12,6 +12,9 @@
 
 + (BOOL) startBeaconTracking:(allunitesdk_beacon_block) findBeacon;
 
++ (void) trackLocationServicePermission: (NSString*) actionId
+                             completion: (void (^)(NSError*)) completion;
+
 @end
 
 #pragma mark SDK Api

@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -56,13 +56,13 @@
 	</dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Application tracks your position to search nearby shops becon</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Application tracks your position to search nearby shops</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Application tracks your position to search nearby shops</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Application tracks your position to search nearby shops</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Application tracks your position to search nearby shops</string>
 	<key>NSLocationUsageDescription</key>
+	<string>Application tracks your position to search nearby shops</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Application tracks your position to search nearby shops</string>
 	<key>UIBackgroundModes</key>
 	<array>
