@@ -23,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return false
     }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("Background fetch")
+        alluniteSdk.backgroundFetch {
+            print("Background fetch completed")
+            completionHandler(UIBackgroundFetchResult.noData)
+        }
+    }
 
 }
 
