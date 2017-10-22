@@ -31,10 +31,10 @@ class YouViewController: UIViewController {
     
     func bindAndTrackDevice() {
         
-        alluniteSdk.requestAutorizationStatus { (status: CLAuthorizationStatus) in
+        alluniteSdk.requestAutorizationStatus(AllUniteSdkAuthorizationAlgorithm.customAlwaysTwoDialog) { [weak self, sdk = self.alluniteSdk] (status: CLAuthorizationStatus) in
             
             if status == CLAuthorizationStatus.notDetermined {
-                self.alluniteSdk.requestAutorizationStatus()
+                sdk.requestAutorizationStatusAlways()
                 return
             }
             
@@ -44,7 +44,7 @@ class YouViewController: UIViewController {
                 if status == CLAuthorizationStatus.denied {
                     let alert = UIAlertController(title: "Alert", message: "User has explicitly denied authorization for this application, or location services are disabled in Settings.", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    self?.present(alert, animated: true, completion: nil)
                     return
                 }
                 
@@ -52,13 +52,13 @@ class YouViewController: UIViewController {
                 return
             }
             
-            self.alluniteSdk.reinitilize({ (error) in
+            sdk.reinitilize({ (error) in
                 if let err = error {
                     print("Reinitilize failed. Reason: \(err.localizedDescription)")
                     return
                 }
                 
-                self.alluniteSdk.startTrackingBeacon({ (error) in
+                sdk.startTrackingBeacon({ (error) in
                     if let _ = error {
                         print("startTrackingBeacon failed")
                         return
@@ -68,7 +68,7 @@ class YouViewController: UIViewController {
                     print("Beacon detected")
                 }
                 
-                self.alluniteSdk.bindDevice({ (error) in
+                sdk.bindDevice({ (error) in
                     if let _ = error {
                         print("bindDevice failed.")
                         return

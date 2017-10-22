@@ -5,11 +5,15 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-typedef void (^allunitesdk_fetch_completion_block)();
+typedef void (^allunitesdk_fetch_completion_block)(void);
 typedef void (^allunitesdk_completion_block)(NSError* _Nullable);
 
 typedef void (^allunitesdk_update_authorization_status_block)(CLAuthorizationStatus status);
 
+typedef NS_ENUM(NSUInteger, AllUniteSdkAuthorizationAlgorithm) {
+    always = 1,
+    customAlwaysTwoDialog = 500,
+};
 
 @interface AllUniteSdkManager : NSObject
 
@@ -26,8 +30,10 @@ typedef void (^allunitesdk_update_authorization_status_block)(CLAuthorizationSta
 -(void) setSdkEnabled: (BOOL) isEnabled;
 
 -(BOOL) isLocationAvailable;
--(void) requestAutorizationStatus;
--(void) requestAutorizationStatus: (allunitesdk_update_authorization_status_block _Nonnull) changeHandler;
+
+-(void) requestAutorizationStatusAlways;
+-(void) requestAutorizationStatus: (AllUniteSdkAuthorizationAlgorithm) algorithm
+                          handler: (allunitesdk_update_authorization_status_block _Nonnull) changeHandler;
 
 -(void) backgroundFetch: (allunitesdk_fetch_completion_block _Nonnull) fetchCompleted;
 
