@@ -31,30 +31,37 @@ class YouViewController: UIViewController {
     
     func bindAndTrackDevice() {
         
-        alluniteSdk.requestAutorizationStatus(AllUniteSdkAuthorizationAlgorithm.customAlwaysTwoDialog) { [weak self, sdk = self.alluniteSdk] (status: CLAuthorizationStatus) in
-            
-            if status == CLAuthorizationStatus.notDetermined {
-                sdk.requestAutorizationStatusAlways()
+        alluniteSdk.reinitilize({ [weak self, sdk = self.alluniteSdk] (error) in
+            if let err = error {
+                print("Failed. Reason: \(err.localizedDescription)")
                 return
             }
             
-            if     status != CLAuthorizationStatus.authorizedWhenInUse
-                && status != CLAuthorizationStatus.authorizedAlways {
-                
-                if status == CLAuthorizationStatus.denied {
-                    let alert = UIAlertController(title: "Alert", message: "User has explicitly denied authorization for this application, or location services are disabled in Settings.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self?.present(alert, animated: true, completion: nil)
+            sdk.bindDevice({ (error) in
+                if let _ = error {
+                    print("bindDevice failed.")
+                    return
+                }
+                print("bindDevice success")
+            })
+            
+            sdk.requestAutorizationStatus(AllUniteSdkAuthorizationAlgorithm.always) { (status: CLAuthorizationStatus) in
+                if status == CLAuthorizationStatus.notDetermined {
+                    //sdk.requestAutorizationStatus()
                     return
                 }
                 
-                print("App don't have permission using Location Service")
-                return
-            }
-            
-            sdk.reinitilize({ (error) in
-                if let err = error {
-                    print("Reinitilize failed. Reason: \(err.localizedDescription)")
+                if     status != CLAuthorizationStatus.authorizedWhenInUse
+                    && status != CLAuthorizationStatus.authorizedAlways {
+                    
+                    if (status == CLAuthorizationStatus.denied) {
+                        let alert = UIAlertController(title: "Alert", message: "User has explicitly denied authorization for this application, or location services are disabled in Settings.", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                        self?.present(alert, animated: true, completion: nil)
+                        return
+                    }
+                    
+                    print("app don't have permission using Location Service")
                     return
                 }
                 
@@ -67,16 +74,8 @@ class YouViewController: UIViewController {
                 }) { (beaconinfo) in
                     print("Beacon detected")
                 }
-                
-                sdk.bindDevice({ (error) in
-                    if let _ = error {
-                        print("bindDevice failed.")
-                        return
-                    }
-                    print("bindDevice success")
-                })
-            })
-        }
+            }
+        })
     }
     
     func bindFacebookProfile() {
