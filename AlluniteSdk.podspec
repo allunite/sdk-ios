@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AlluniteSdk'
-  s.version          = '1.2.11'
+  s.version          = '1.2.16'
 s.summary          = 'AllUnite SDK designed to track consumers in the physical world.'
 
   s.description      = <<-DESC
