@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, AllUniteSdkAuthorizationAlgorithm) {
 -(BOOL) isSdkEnabled;
 -(void) setSdkEnabled: (BOOL) isEnabled;
 
+-(void) enableDebugLog;
+
 -(BOOL) isLocationAvailable;
 
 -(void) requestAutorizationStatusAlways;
