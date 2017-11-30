@@ -125,6 +125,7 @@
 				TargetAttributes = {
 					001B44F81F50615600F29ED6 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = Z33XTX3YMY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -356,7 +357,7 @@
 			baseConfigurationReference = FF1DF3441CE52ED1186C702C /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z33XTX3YMY;
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allunite.sdk.demo;
@@ -371,7 +372,7 @@
 			baseConfigurationReference = 14EA7D888B0AD31DE82D4660 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z33XTX3YMY;
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allunite.sdk.demo;

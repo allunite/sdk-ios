@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, AllUniteSdkAuthorizationAlgorithm) {
 
 -(void) initializeAllUniteSdkWithAccountId:(NSString* _Nonnull) accountId
                                 accountKey:(NSString* _Nonnull) accountKey
-                             launchOptions:(NSDictionary * _Nullable) launchOptions;
+                             launchOptions:(NSDictionary * _Nullable) launchOptions
+                                completion: (allunitesdk_completion_block _Nullable) completion;
 
 +(AllUniteSdkManager* _Nonnull) sharedInstance;
 
