@@ -89,7 +89,7 @@ Custom Url scheme:
 			<string>AllUniteSdk</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>allunite-sdk</string>
+				<string>your_allunite_unique_sheme</string>
 			</array>
 		</dict>
 		...
