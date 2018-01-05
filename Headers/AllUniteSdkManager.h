@@ -54,6 +54,7 @@ typedef NS_ENUM(NSUInteger, AllUniteSdkAuthorizationAlgorithm) {
 -(void) trackWithCategory: (NSString* _Nonnull) actionCategory
                  actionId: (NSString* _Nonnull) actionId
                completion: (allunitesdk_completion_block _Nonnull) completion;
+-(void) trackDeviceStatus: (allunitesdk_completion_block _Nonnull) completion;
 
 -(BOOL) isTrackingBeacons;
 -(void) startTrackingBeacon: (allunitesdk_completion_block _Nonnull) completion didFindBeacon:(allunitesdk_beacon_block _Nullable) findBeacon;
