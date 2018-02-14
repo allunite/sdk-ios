@@ -56,7 +56,7 @@ We recommend installing AlluniteSdk with CocoaPods. CocoaPods is an Objective-C 
 
 Add a dependency to your Podfile in your Xcode project directory:
 ```ruby
-pod 'AlluniteSdk', :git => 'https://github.com/allunite/sdk-ios.git', :tag => '1.2.20'
+pod 'AlluniteSdk', :git => 'https://github.com/allunite/sdk-ios.git', :tag => '1.2.21'
 ```
 
 Now you can install the AlluniteSdk dependency in your project:
