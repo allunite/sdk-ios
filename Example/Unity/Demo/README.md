@@ -1,6 +1,8 @@
 Unity. AllUnite Demo (IOS platform)
 ===============================
 
+libAllUniteSdk.a (version 1.2.21)
+
 ##### 1. Open Unity project.
 ##### 2. Switch platform to ios (**REQUIRED**)
 ##### 3. Build ios platform (Unity create new XCode project)
