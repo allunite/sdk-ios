@@ -25,7 +25,7 @@ IOS Apple Push Notification (APN) - Quick Start Guide
 </plist>
 ```
 
-#### 1.2. Open XCode project and implement AppDelegate:
+#### 1.2. Open XCode swift project and implement AppDelegate:
 
 ```
 
@@ -83,6 +83,176 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
     }
 }
+```
+
+#### 1.2. Open Unity project and implement (demo) 
+
+```
+using UnityEngine;
+using System.Collections;
+using System.Runtime.InteropServices;
+using AOT;
+using NotificationServices = UnityEngine.iOS.NotificationServices;
+using NotificationType = UnityEngine.iOS.NotificationType;
+using Device = UnityEngine.iOS.Device;
+
+public class AlluniteSdk : MonoBehaviour {
+
+	#if UNITY_IPHONE
+
+	[DllImport("__Internal")]
+	public static extern int AllUnite_enableDebugLog();
+
+	[DllImport("__Internal")]
+	public static extern int AllUnite_InitSDK(string accountId, string accountKey);
+	[DllImport("__Internal")]
+	private static extern void AllUnite_InitSDK_Async(string accountId, string accountKey, Callback callback);
+	[DllImport("__Internal")]
+	public static extern void AllUnite_Track(string actionCategory, string actionId);
+	[DllImport("__Internal")]
+	public static extern void AllUnite_TrackDeviceState();
+		
+	[DllImport("__Internal")]
+	public static extern bool AllUnite_isBeaconTracking();
+	[DllImport("__Internal")]
+	public static extern void AllUnite_SendBeaconTrack();
+	[DllImport("__Internal")]
+	public static extern void AllUnite_StopBeaconTrack();
+
+	[DllImport("__Internal")]
+	public static extern bool AllUnite_isDeviceBounded();
+	[DllImport("__Internal")]
+	public static extern void AllUnite_BindDevice();
+	[DllImport("__Internal")]
+	public static extern void AllUnite_BindFbProfile(string profileToken, string profileData);
+	[DllImport("__Internal")]
+	public static extern void AllUnite_RequestAlwaysAuthorization();
+
+
+	public delegate void Callback(int error);
+
+	#endif
+
+	private static string YOUR_ACCOUNT_ID = "UnityDemo";
+	private static string YOUR_ACCOUNT_KEY = "2414863EEE4C41EAAE505983A9F2CD23";
+
+	public void onClickInitSdkAsync(){
+		Debug.Log("AllUnite_InitSDK_Async");
+
+		AllUnite_enableDebugLog();
+
+		AllUnite_InitSDK_Async (YOUR_ACCOUNT_ID, YOUR_ACCOUNT_KEY, asyncInitResult);
+	}
+
+	[MonoPInvokeCallback(typeof(Callback))]
+	private static void asyncInitResult(int res) {
+		Debug.Log("Init result: " + res);
+		if (res == 0) {
+			Debug.Log ("Init SDK. Success");
+		} else {
+			Debug.Log ("Init SDK. Failed network request");
+		}
+	}
+
+	public void onClickRequestAutorizationStatus() {
+		AllUnite_RequestAlwaysAuthorization();
+	}
+}
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using NotificationServices = UnityEngine.iOS.NotificationServices;
+using NotificationType = UnityEngine.iOS.NotificationType;
+using Device = UnityEngine.iOS.Device;
+using RemoteNotification = UnityEngine.iOS.RemoteNotification;
+
+public class AllUniteSdkPushNotificationDemo : MonoBehaviour {
+
+	private bool tokenSent = false;
+
+	private string apnToken;
+	private string deviceId;
+
+	void Start () {
+		this.registerRemoteNotifications ();
+	}
+
+	void Update () {
+		this.sendApnToken ();
+		this.handleRemoteNotifications();
+	}
+
+
+	private void registerRemoteNotifications(){
+		NotificationServices.RegisterForNotifications(
+			NotificationType.Alert | 
+			NotificationType.Badge | 
+			NotificationType.Sound);
+	}
+
+
+	private void sendApnToken(){
+		if (tokenSent) {
+			return;
+		}
+
+		byte[] token = NotificationServices.deviceToken;
+		if (token == null) {
+			return;
+		}
+		this.apnToken = System.BitConverter.ToString(token).Replace("-", "");
+		this.deviceId = Device.vendorIdentifier;
+		this.tokenSent = true;
+
+		Debug.Log ("Send apn token = " + apnToken + " for device " + deviceId);
+	}
+
+	private void handleRemoteNotifications(){
+
+		if (NotificationServices.remoteNotificationCount == 0) {
+			return;
+		}
+
+		foreach (RemoteNotification notification in NotificationServices.remoteNotifications) {
+			Debug.Log ("Received remote notification");
+			this.handleRemoteNotification (notification);
+		}
+
+		NotificationServices.ClearRemoteNotifications();
+	}
+
+	// Payload (silent): { "aps" : { "content-available" : 1, "sound" : "" }, "data" :{"allunite" : "RequestDeviceStatus"}}
+	private void handleRemoteNotification(RemoteNotification remoteNotification) {
+		if (!isAllUniteRequest (remoteNotification)) {
+			Debug.Log ("Handle your remote push notification");
+			return;
+		}
+
+		string allUniteRequest = this.getAllUniteRequest (remoteNotification);
+		if (allUniteRequest == "RequestDeviceStatus") {
+			Debug.Log ("AllUniteSdk. remote notification - " + allUniteRequest );
+			AlluniteSdk.AllUnite_TrackDeviceState ();
+		} else {
+			Debug.Log ("AllUniteSdk. remote notification - unknown " + allUniteRequest);
+		}
+
+	}
+
+	private bool isAllUniteRequest(RemoteNotification remoteNotification){
+		return this.getAllUniteRequest (remoteNotification) != null;
+	}
+
+	private string getAllUniteRequest(RemoteNotification remoteNotification){
+		IDictionary data = remoteNotification.userInfo ["data"] as IDictionary;
+		if (data == null) {
+			return null;
+		}
+		return data ["allunite"] as string;
+	}
+}
+
+
 ```
 
 Sending a Push Notification:
