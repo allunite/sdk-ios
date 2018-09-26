@@ -17,13 +17,7 @@ consumers in the physical world.
 How it works (workflow)
 ===============================
 
-##### 1. Match physical device (**REQUIRED**)
-To match the device we need to open web browser and do a few redirects to link consumer's cookies with device ID.
-Finally consumer's journey ends on a landing page that tries to open Application at once or makes it possible to open Application later.
-
-Method alluniteSdk.bindDevice() performs matching process described above.
-
-##### 2. Request consumer's permission (**REQUIRED**)
+##### 1. Request consumer's permission (**REQUIRED**)
 Tracking technology requires location permission that should be requested from a consumer.
 Call to alluniteSdk.requestAutorizationStatus() method shows the dialog if permission has not been requested already.
 AllUnite SDK doesn't tracks the device in case location permission is not provided.
@@ -32,7 +26,6 @@ You can enable or disable SDK explicitly using application URI (deep link) [app_
 To make it possible you would need to override system application public function and call alluniteSdk.open() as it described in "Init AllUniteSdk in application delegate" below.
 
 It can be useful if Application shows Terms & Conditions page that has "OK" and "No Thanks" options.
-In this case "No Thanks" button opens [app_schema]://allunite-sdk-mode?enable=false that disables AllUnite SDK functionality, "OK" button can starts matching process directly in the browser (we need to customize it first) or using alluniteSdk.bindDevice() method (see previous paragraph).
 
 Alternative way to switch SDK on/off is alluniteSdk.setSdkEnabled([true/false]) method.
 Method alluniteSdk.isSdkEnabled() shows you current state.
@@ -56,7 +49,7 @@ We recommend installing AlluniteSdk with CocoaPods. CocoaPods is an Objective-C 
 
 Add a dependency to your Podfile in your Xcode project directory:
 ```ruby
-pod 'AlluniteSdk', :git => 'https://github.com/allunite/sdk-ios.git', :tag => '1.2.21'
+pod 'AlluniteSdk', :git => 'https://github.com/allunite/sdk-ios.git', :tag => '2.1'
 ```
 
 Now you can install the AlluniteSdk dependency in your project:
@@ -175,7 +168,7 @@ class YouViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindAndTrackDevice()
+        trackDevice()
     }
     
     
@@ -197,7 +190,7 @@ class YouViewController: UIViewController {
         alluniteSdk.setSdkEnabled(false)
     }
     
-    func bindAndTrackDevice() {
+    func trackDevice() {
         
         alluniteSdk.reinitilize({ [weak self, sdk = self.alluniteSdk] (error) in
             if let err = error {
@@ -205,13 +198,6 @@ class YouViewController: UIViewController {
                 return
             }
             
-            sdk.bindDevice({ (error) in
-                if let _ = error {
-                    print("bindDevice failed.")
-                    return
-                }
-                print("bindDevice success")
-            })
             
             sdk.requestAutorizationStatus(AllUniteSdkAuthorizationAlgorithm.always) { (status: CLAuthorizationStatus) in
                 if status == CLAuthorizationStatus.notDetermined {
@@ -246,19 +232,6 @@ class YouViewController: UIViewController {
         })
     }
     
-    func bindFacebookProfile() {
-        
-        let token = getFacebookToken()
-        let profileJsonData = getFacebookProfileJson()
-        
-        alluniteSdk.bindFacebook(token, profileJson: profileJsonData) { (error) in
-            if let _ = error {
-                print("fail")
-                return
-            }
-            print("success")
-        }
-    }
     
     func sendCampaignTrack() {
         
@@ -273,14 +246,5 @@ class YouViewController: UIViewController {
         }
     }
     
-    
-    func getFacebookToken() -> String {
-        return "facebook user token"
-    }
-    
-    func getFacebookProfileJson() -> String {
-        return "facebook profile json for user token"
-    }
-
 }
 ```
