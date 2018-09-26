@@ -30,13 +30,13 @@ It can be useful if Application shows Terms & Conditions page that has "OK" and 
 Alternative way to switch SDK on/off is alluniteSdk.setSdkEnabled([true/false]) method.
 Method alluniteSdk.isSdkEnabled() shows you current state.
 
-##### 3. Start beacon tracking (**REQUIRED**)
+##### 2. Start beacon tracking (**REQUIRED**)
 To start tracking you need to call alluniteSdk.startTrackingBeacon() method.
 AllUnite SDK will track device in foreground and background until alluniteSdk.stopTrackingBeacon() method is called.
 You can specify a delegate in alluniteSdk.startTrackingBeacon() method that will be called each time when beacon detected.
 It can be used to show a message or do any other actions when consumer enters an area of the beacon vicinity.
 
-##### 4. Custom actions tracking (**OPTIONAL**)
+##### 3. Custom actions tracking (**OPTIONAL**)
 You can register any custom actions using alluniteSdk.track() method and use it next to location tracking info on the AllUnite Campaign Dashboard.
 
 
