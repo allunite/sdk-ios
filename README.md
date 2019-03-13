@@ -9,8 +9,7 @@ AllUnite measure the anonymous consumer in the local store using AllUnite WiFi a
 
 The purpose of this document is to describe how to integrate AllUnite SDK in an app.
 
-AllUnite SDK designed to match consumer's web profile to their physical device and to track
-consumers in the physical world.
+AllUnite SDK designed to track consumers in the physical world.
 
 ![Overal schema](https://s3-eu-west-1.amazonaws.com/allunite-main/doc/scheme_v3.2.png)
 
